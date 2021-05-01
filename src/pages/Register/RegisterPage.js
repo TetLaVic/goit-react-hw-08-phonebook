@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { v4 as genId } from 'uuid';
-// import operations from '../../redux/ContactForm/ContactForm-operations';
+import authOperations from '../../redux/auth/auth-operations';
 
 class RegisterPage extends Component {
   state = { name: '', email: '', password: '' };
@@ -20,12 +20,12 @@ class RegisterPage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state);
+    this.props.onRegister(this.state);
     this.reset();
   };
 
   render() {
-    const { name, email, password } = this.state;
+    // const { name, email, password } = this.state;
     const nameInputId = genId();
     const emailInputId = genId();
     const passwordInputId = genId();
@@ -71,4 +71,8 @@ class RegisterPage extends Component {
   }
 }
 
-export default RegisterPage;
+const mapDispatchToProps = {
+  onRegister: authOperations.register,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterPage);

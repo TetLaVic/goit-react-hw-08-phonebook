@@ -25,7 +25,7 @@ class LoginPage extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    // const { email, password } = this.state;
     const emailInputId = genId();
     const passwordInputId = genId();
     return (

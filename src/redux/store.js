@@ -11,6 +11,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import authReducer from './auth/auth-reducers';
 // import storage from 'redux-persist/lib/storage';
 // import persistReducer from 'redux-persist/es/persistReducer';
 
@@ -22,6 +23,7 @@ import {
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
+  auth: authReducer,
 });
 
 // const store = createStore(rootReducer, composeWithDevTools());
