@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import authSelectors from '../../redux/auth/auth-selectors';
+import avatar from './avatar.png';
 
 const UserMenu = ({ avatar, name, onLogout }) => {
   return (
     <div>
-      <img src={avatar} alt="" width="" />
-      <span>{name}</span>
+      <img src={avatar} alt="" width="32" />
+      <span>Welcome, {name}</span>
       <button type="button" onClick={onLogout}>
         Logout
       </button>
@@ -12,4 +15,9 @@ const UserMenu = ({ avatar, name, onLogout }) => {
   );
 };
 
-export default UserMenu;
+const mapStateToProps = state => ({
+  name: authSelectors.getUserName(state),
+  avatar,
+});
+
+export default connect(mapStateToProps)(UserMenu);

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { v4 as genId } from 'uuid';
-// import operations from '../../redux/ContactForm/ContactForm-operations';
+import authOperations from '../../redux/auth/auth-operations';
 
 class LoginPage extends Component {
   state = { email: '', password: '' };
@@ -20,7 +20,7 @@ class LoginPage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state);
+    this.props.onLogin(this.state);
     this.reset();
   };
 
@@ -60,7 +60,11 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapDispatchToProps = {
+  onLogin: authOperations.login,
+};
+
+export default connect(null, mapDispatchToProps)(LoginPage);
 
 // import { connect } from 'react-redux';
 // import operations from '../../redux/ContactForm/ContactForm-operations';
