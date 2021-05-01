@@ -1,0 +1,79 @@
+{
+  "contacts": [
+    {
+      "id": "id-1",
+      "name": "Rosie Simpson",
+      "number": "459-12-56"
+    },
+    {
+      "id": "id-2",
+      "name": "Hermione Kline",
+      "number": "443-89-12"
+    },
+    {
+      "id": "id-3",
+      "name": "Eden Clements",
+      "number": "645-17-79"
+    },
+    {
+      "id": "id-4",
+      "name": "Annie Copeland",
+      "number": "227-91-26"
+    },
+    {
+      "name": "",
+      "number": "",
+      "id": "Cajbrho"
+    },
+    {
+      "name": "Moussique",
+      "number": "123",
+      "id": "OAalnp2"
+    },
+    {
+      "name": "uu",
+      "number": "0000",
+      "id": "W8P5A-I"
+    },
+    {
+      "name": "muzjabr",
+      "number": "9999",
+      "id": "bd1EcNI"
+    },
+    {
+      "name": "ooooo",
+      "number": "000000000",
+      "id": "ULknY0v"
+    },
+    {
+      "name": "Moussique",
+      "number": "5555555",
+      "id": "JyPhAVk"
+    },
+    {
+      "name": "uu",
+      "number": "123",
+      "id": "3Cr5PQT"
+    },
+    {
+      "name": "Iuliia Lavrenko",
+      "number": "123",
+      "id": "c_yd_qm"
+    },
+    {
+      "name": "Tetiana Lavrenko",
+      "number": "5555555",
+      "id": "RBGVX88"
+    },
+    {
+      "name": "llll",
+      "number": "55444",
+      "id": "bQwn-V4"
+    },
+    {
+      "name": "python",
+      "number": "37",
+      "id": "bIDF3wZ"
+    }
+  ]
+}

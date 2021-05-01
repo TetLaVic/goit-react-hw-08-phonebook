@@ -1,0 +1,6 @@
+.contactList {
+  outline: 2px solid grey;
+  width: 300px;
+  display: flex;
+  flex-flow: column;
+}

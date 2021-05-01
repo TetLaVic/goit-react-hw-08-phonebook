@@ -1,0 +1,27 @@
+.contactForm {
+  outline: 2px solid black;
+  width: 250px;
+  height: 200px;
+  /* margin-right: auto; */
+  margin-left: 10px;
+  padding: 20px;
+}
+
+.labelForm {
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.inputForm {
+  display: block;
+  margin-right: 20px;
+  /* margin-left: 20px; */
+}
+
+.buttonForm {
+  padding: 8px;
+  border-radius: 5px;
+}
