@@ -1,29 +1,26 @@
-import { Component } from 'react';
+import React from 'react';
 import './App.css';
-
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
 // import { v4 as genId } from 'uuid';
+import { Switch, Route } from 'react-router-dom';
+import AppBar from './components/AppBar';
+import ContactsPage from './pages/Contacts';
+import LoginPage from './pages/Login';
+import RegisterPage from './pages/Register';
+import HomePage from './pages/Home';
 
-class App extends Component {
-  // componentDidMount() {
-  // }
-
-  // componentDidUpdate(_, prevState) {
-  // }
-
-  render() {
-    return (
-      <>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-      </>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <AppBar />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/login" component={LoginPage} />
+        {/* <Route exact path="/contacts" component={ContactsPage} /> */}
+        <Route component={HomePage} />
+      </Switch>
+    </>
+  );
+};
 
 export default App;
