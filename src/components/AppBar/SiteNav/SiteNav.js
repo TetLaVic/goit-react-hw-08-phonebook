@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SiteNav.module.css';
+import { connect } from 'react-redux';
+import authSelectors from '../../../redux/auth/auth-selectors';
 
-const SiteNav = () => {
+const SiteNav = ({ isAuthenticated }) => {
   return (
     <ul className={styles.SiteNav}>
       <li className={styles.SiteNavLink}>
@@ -16,16 +18,22 @@ const SiteNav = () => {
         </NavLink>
       </li>
       <li className={styles.SiteNavLink}>
-        <NavLink
-          to="/contacts"
-          className={styles.NavLink}
-          activeClassName={styles.NavLinkActive}
-        >
-          Contacts
-        </NavLink>
+        {isAuthenticated && (
+          <NavLink
+            to="/contacts"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
+          >
+            Contacts
+          </NavLink>
+        )}
       </li>
     </ul>
   );
 };
 
-export default SiteNav;
+const mapStateToProps = state => ({
+  isAuthenticated: authSelectors.getIsAuthenticated(state),
+});
+
+export default connect(mapStateToProps)(SiteNav);

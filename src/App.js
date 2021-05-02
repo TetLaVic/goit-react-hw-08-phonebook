@@ -9,6 +9,8 @@ import RegisterPage from './pages/Register';
 import HomePage from './pages/Home';
 import authOperations from './redux/auth/auth-operations';
 import { connect } from 'react-redux';
+import PrivateRoute from './components/AppBar/PrivateRoute';
+import PublicRoute from './components/AppBar/PublicRoute';
 
 class App extends Component {
   componentDidMount() {
@@ -22,8 +24,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/register" component={RegisterPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/contacts" component={ContactsPage} />
+          <PublicRoute exact path="/login" component={LoginPage} />
+          <PrivateRoute
+            exact
+            path="/contacts"
+            restricted
+            component={ContactsPage}
+          />
           <Route component={HomePage} />
         </Switch>
       </>
