@@ -23,14 +23,14 @@ class App extends Component {
         <AppBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/register" component={RegisterPage} />
-          <PublicRoute exact path="/login" component={LoginPage} />
-          <PrivateRoute
+          <PublicRoute
             exact
-            path="/contacts"
+            path="/register"
             restricted
-            component={ContactsPage}
+            component={RegisterPage}
           />
+          <PublicRoute exact path="/login" restricted component={LoginPage} />
+          <PrivateRoute exact path="/contacts" component={ContactsPage} />
           <Route component={HomePage} />
         </Switch>
       </>
