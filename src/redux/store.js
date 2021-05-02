@@ -4,6 +4,7 @@ import contactsReducer from './ContactForm/ContactForm-reducer';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import {
+  persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,18 +13,18 @@ import {
   REGISTER,
 } from 'redux-persist';
 import authReducer from './auth/auth-reducers';
-// import storage from 'redux-persist/lib/storage';
-// import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
+import persistReducer from 'redux-persist/es/persistReducer';
 
-// const contactsPersistConfig = {
-//   key: 'contacts',
-//   storage,
-//   blacklist: ['filter'],
-// };
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
-  auth: authReducer,
+  auth: persistReducer(authPersistConfig, authReducer),
 });
 
 // const store = createStore(rootReducer, composeWithDevTools());
@@ -45,6 +46,6 @@ const store = configureStore({
   devTools: process.env.NODE_ENV === 'development',
 });
 
-// const persistor = persistStore(store);
+const persistor = persistStore(store);
 
-export default store;
+export default { store, persistor };
