@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/auth-operations';
 import avatar from './avatar.png';
 
 const UserMenu = ({ avatar, name, onLogout }) => {
@@ -20,4 +21,8 @@ const mapStateToProps = state => ({
   avatar,
 });
 
-export default connect(mapStateToProps)(UserMenu);
+const mapDispatchToProps = {
+  onLogout: authOperations.logout,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);
