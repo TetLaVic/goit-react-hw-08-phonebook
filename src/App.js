@@ -11,6 +11,7 @@ import authOperations from './redux/auth/auth-operations';
 import { connect } from 'react-redux';
 import PrivateRoute from './components/AppBar/PrivateRoute';
 import PublicRoute from './components/AppBar/PublicRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = lazy(() =>
   import('./pages/Home' /*WebpackChunkName: HomePage */),

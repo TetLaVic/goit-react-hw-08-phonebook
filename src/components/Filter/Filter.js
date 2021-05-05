@@ -5,23 +5,37 @@ import styles from './Filter.module.css';
 import { connect } from 'react-redux';
 import actions from '../../redux/ContactForm/ContactForm-actions';
 import selectors from '../../redux/ContactForm/ContactForm-selectors';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
 
 class Filter extends Component {
   render() {
     const filterInputId = genId();
     const { filterState, onFilterChange } = this.props;
     return (
-      <label htmlFor={filterInputId} className={styles.labelFilter}>
-        Find contacts by name
-        <input
+      // <label htmlFor={filterInputId} className={styles.labelFilter}>
+      //   Find contacts by name
+      //   <input
+      //     type="text"
+      //     name="filter"
+      //     id={filterInputId}
+      //     value={filterState}
+      //     onChange={onFilterChange}
+      //     className={styles.inputFilter}
+      //   />
+      // </label>
+      <Form inline>
+        <FormControl
           type="text"
           name="filter"
-          id={filterInputId}
           value={filterState}
           onChange={onFilterChange}
-          className={styles.inputFilter}
+          placeholder="Search"
+          className="mr-sm-2"
         />
-      </label>
+        <Button variant="outline-light">Search</Button>
+      </Form>
     );
   }
 }

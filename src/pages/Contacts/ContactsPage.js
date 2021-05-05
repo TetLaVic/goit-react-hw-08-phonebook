@@ -2,16 +2,26 @@ import React from 'react';
 import ContactForm from '../../components/ContactForm';
 import Filter from '../../components/Filter';
 import ContactList from '../../components/ContactList';
+import styles from './ContactsPage.module.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ContactsPage = () => {
   return (
-    <>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <h2 className={styles.h2Header}>Phonebook</h2>
+          <ContactForm />
+        </Col>
+        <Col>
+          <h2 className={styles.h2Header}>Contacts</h2>
+          <Filter />
+          <ContactList />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

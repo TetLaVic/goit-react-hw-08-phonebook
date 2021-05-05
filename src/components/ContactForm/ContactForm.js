@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 import { connect } from 'react-redux';
 import operations from '../../redux/ContactForm/ContactForm-operations';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 class ContactForm extends Component {
   state = { name: '', number: '' };
@@ -31,34 +33,60 @@ class ContactForm extends Component {
     const telInputId = genId();
 
     return (
-      <form onSubmit={this.handleSubmit} className={styles.contactForm}>
-        <label htmlFor={nameInputId} className={styles.labelForm}>
-          Name
-          <input
-            type="text"
+      <Form onSubmit={this.handleSubmit} className={styles.Form}>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="name"
             name="name"
-            id={nameInputId}
-            value={this.state.name}
+            value={this.state.email}
+            placeholder="Enter name"
             onChange={this.handleChange}
-            className={styles.inputForm}
           />
-        </label>
+        </Form.Group>
 
-        <label htmlFor={telInputId} className={styles.labelForm}>
-          Number
-          <input
+        <Form.Group controlId="formBasicNumber">
+          <Form.Label>Number</Form.Label>
+          <Form.Control
             type="tel"
             name="number"
-            id={telInputId}
-            value={this.state.number}
+            placeholder="Number"
+            value={this.state.password}
             onChange={this.handleChange}
-            className={styles.inputForm}
           />
-        </label>
-        <button type="submit" className={styles.buttonForm}>
+        </Form.Group>
+        <Button variant="primary" type="submit">
           Add contact
-        </button>
-      </form>
+        </Button>
+      </Form>
+      // <Form onSubmit={this.handleSubmit} className={styles.contactForm}>
+      //   <label htmlFor={nameInputId} className={styles.labelForm}>
+      //     Name
+      //     <input
+      //       type="text"
+      //       name="name"
+      //       id={nameInputId}
+      //       value={this.state.name}
+      //       onChange={this.handleChange}
+      //       className={styles.inputForm}
+      //     />
+      //   </label>
+
+      //   <label htmlFor={telInputId} className={styles.labelForm}>
+      //     Number
+      //     <input
+      //       type="tel"
+      //       name="number"
+      //       id={telInputId}
+      //       value={this.state.number}
+      //       onChange={this.handleChange}
+      //       className={styles.inputForm}
+      //     />
+      //   </label>
+      //   <button type="submit" className={styles.buttonForm}>
+      //     Add contact
+      //   </button>
+      // </form>
     );
   }
 }

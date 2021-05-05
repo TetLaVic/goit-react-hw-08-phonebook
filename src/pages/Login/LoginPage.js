@@ -2,6 +2,9 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { v4 as genId } from 'uuid';
 import authOperations from '../../redux/auth/auth-operations';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import styles from './LoginPage.module.css';
 
 class LoginPage extends Component {
   state = { email: '', password: '' };
@@ -25,13 +28,39 @@ class LoginPage extends Component {
   };
 
   render() {
-    // const { email, password } = this.state;
     const emailInputId = genId();
     const passwordInputId = genId();
     return (
       <>
         <h2>Login page</h2>
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} className={styles.Form}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              value={this.state.email}
+              placeholder="Enter email"
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </>
+      /* <form onSubmit={this.handleSubmit}>
           <label htmlFor={emailInputId}>
             Email
             <input
@@ -55,7 +84,7 @@ class LoginPage extends Component {
           </label>
           <button type="submit">Sign in</button>
         </form>
-      </>
+      </> */
     );
   }
 }
@@ -65,75 +94,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(null, mapDispatchToProps)(LoginPage);
-
-// import { connect } from 'react-redux';
-// import operations from '../../redux/ContactForm/ContactForm-operations';
-
-// class ContactForm extends Component {
-//   state = { name: '', number: '' };
-
-//   reset = () => {
-//     this.setState({ name: '', number: '' });
-//   };
-
-//   handleChange = event => {
-//     event.preventDefault();
-//     const { name, value } = event.currentTarget;
-//     const currentState = this.state;
-//     const updateState = { [name]: value };
-//     this.setState({ ...currentState, ...updateState });
-//   };
-
-//   handleSubmit = event => {
-//     event.preventDefault();
-//     this.props.onSubmit(this.state);
-//     this.reset();
-//   };
-
-//   render() {
-//     const nameInputId = genId();
-//     const telInputId = genId();
-
-//     return (
-//       <form onSubmit={this.handleSubmit} className={styles.contactForm}>
-//         <label htmlFor={nameInputId} className={styles.labelForm}>
-//           Name
-//           <input
-//             type="text"
-//             name="name"
-//             id={nameInputId}
-//             value={this.state.name}
-//             onChange={this.handleChange}
-//             className={styles.inputForm}
-//           />
-//         </label>
-
-//         <label htmlFor={telInputId} className={styles.labelForm}>
-//           Number
-//           <input
-//             type="tel"
-//             name="number"
-//             id={telInputId}
-//             value={this.state.number}
-//             onChange={this.handleChange}
-//             className={styles.inputForm}
-//           />
-//         </label>
-//         <button type="submit" className={styles.buttonForm}>
-//           Add contact
-//         </button>
-//       </form>
-//     );
-//   }
-// }
-
-// ContactForm.propTypes = {
-//   name: PropTypes.string,
-//   number: PropTypes.number,
-// };
-
-// const mapDispatchToProps = dispatch => ({
-//   onSubmit: contact => dispatch(operations.addContact(contact)),
-// });
-
-// export default connect(null, mapDispatchToProps)(ContactForm);

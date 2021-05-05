@@ -9,3 +9,12 @@
   margin-left: 40px;
   border: 1px solid rgb(231, 216, 216);
 }
+
+.ListGroup.Item {
+  display: flex;
+  align-items: space-between;
+}
+
+.Button {
+  display: inline-block;
+}

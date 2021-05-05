@@ -1,0 +1,22 @@
+.center {
+  position: relative;
+  top: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 150px; */
+  /* background: #999ff0; */
+}
+
+.bgImage {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(50%, -50%);
+  background-image: url('./phonebook.jpg');
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

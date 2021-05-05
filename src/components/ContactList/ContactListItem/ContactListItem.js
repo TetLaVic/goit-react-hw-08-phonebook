@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactListItem.module.css';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 
 const ContactListItem = ({ name, number, id, onDeleteContact }) => {
   return (
-    <li id={id} className={styles.listItem}>
+    <ListGroup.Item id={id} className={styles.ListGroup.Item}>
       {name}: {number}
-      <button
+      <Button
+        className={styles.Button}
+        variant="outline-danger"
         onClick={() => {
           onDeleteContact(id);
         }}
         className={styles.buttonListItem}
       >
         Delete
-      </button>
-    </li>
+      </Button>
+    </ListGroup.Item>
   );
 };
 

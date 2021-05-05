@@ -5,6 +5,7 @@ import styles from './ContactList.module.css';
 import { connect } from 'react-redux';
 import operations from '../../redux/ContactForm/ContactForm-operations';
 import selectors from '../../redux/ContactForm/ContactForm-selectors';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 class ContactList extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class ContactList extends Component {
   render() {
     const { contactsList, onDeleteContact } = this.props;
     return (
-      <ul>
+      <ListGroup className={styles.ListGroup}>
         {contactsList.map(({ name, number, id }) => {
           return (
             <ContactListItem
@@ -26,7 +27,7 @@ class ContactList extends Component {
             />
           );
         })}
-      </ul>
+      </ListGroup>
     );
   }
 }
