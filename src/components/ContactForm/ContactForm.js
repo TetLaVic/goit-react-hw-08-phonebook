@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { v4 as genId } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 import { connect } from 'react-redux';
@@ -29,9 +28,6 @@ class ContactForm extends Component {
   };
 
   render() {
-    const nameInputId = genId();
-    const telInputId = genId();
-
     return (
       <Form onSubmit={this.handleSubmit} className={styles.Form}>
         <Form.Group controlId="formBasicName">
@@ -59,34 +55,6 @@ class ContactForm extends Component {
           Add contact
         </Button>
       </Form>
-      // <Form onSubmit={this.handleSubmit} className={styles.contactForm}>
-      //   <label htmlFor={nameInputId} className={styles.labelForm}>
-      //     Name
-      //     <input
-      //       type="text"
-      //       name="name"
-      //       id={nameInputId}
-      //       value={this.state.name}
-      //       onChange={this.handleChange}
-      //       className={styles.inputForm}
-      //     />
-      //   </label>
-
-      //   <label htmlFor={telInputId} className={styles.labelForm}>
-      //     Number
-      //     <input
-      //       type="tel"
-      //       name="number"
-      //       id={telInputId}
-      //       value={this.state.number}
-      //       onChange={this.handleChange}
-      //       className={styles.inputForm}
-      //     />
-      //   </label>
-      //   <button type="submit" className={styles.buttonForm}>
-      //     Add contact
-      //   </button>
-      // </form>
     );
   }
 }

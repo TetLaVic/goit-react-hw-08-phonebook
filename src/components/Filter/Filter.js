@@ -1,7 +1,5 @@
 import { Component } from 'react';
-import { v4 as genId } from 'uuid';
 import PropTypes from 'prop-types';
-import styles from './Filter.module.css';
 import { connect } from 'react-redux';
 import actions from '../../redux/ContactForm/ContactForm-actions';
 import selectors from '../../redux/ContactForm/ContactForm-selectors';
@@ -11,20 +9,8 @@ import Button from 'react-bootstrap/Button';
 
 class Filter extends Component {
   render() {
-    const filterInputId = genId();
     const { filterState, onFilterChange } = this.props;
     return (
-      // <label htmlFor={filterInputId} className={styles.labelFilter}>
-      //   Find contacts by name
-      //   <input
-      //     type="text"
-      //     name="filter"
-      //     id={filterInputId}
-      //     value={filterState}
-      //     onChange={onFilterChange}
-      //     className={styles.inputFilter}
-      //   />
-      // </label>
       <Form inline>
         <FormControl
           type="text"
@@ -47,7 +33,6 @@ Filter.propTypes = {
 
 const mapStateToProps = state => ({
   filterState: selectors.getFilter(state),
-  // filterState: state.contacts.filter,
 });
 
 const mapDispatchToProps = dispatch => ({

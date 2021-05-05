@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { v4 as genId } from 'uuid';
 import authOperations from '../../redux/auth/auth-operations';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -28,8 +27,6 @@ class LoginPage extends Component {
   };
 
   render() {
-    const emailInputId = genId();
-    const passwordInputId = genId();
     return (
       <>
         <h2>Login page</h2>
@@ -60,31 +57,6 @@ class LoginPage extends Component {
           </Button>
         </Form>
       </>
-      /* <form onSubmit={this.handleSubmit}>
-          <label htmlFor={emailInputId}>
-            Email
-            <input
-              type="emal"
-              name="email"
-              id={emailInputId}
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label htmlFor={passwordInputId}>
-            Password
-            <input
-              type="password"
-              name="password"
-              id={passwordInputId}
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Sign in</button>
-        </form>
-      </> */
     );
   }
 }
