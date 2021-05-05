@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/Login/LoginPage.module.css"],"names":[],"mappings":"AAAA,GACE,iBAAkB,CAClB,kBACF,CAEA,uBACE,SAAU,CACV,iBAAkB,CAClB,gBACF","file":"3.f9f1c8c7.chunk.css","sourcesContent":["h2 {\r\n  text-align: center;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.Form {\r\n  width: 30%;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n}\r\n"]}
