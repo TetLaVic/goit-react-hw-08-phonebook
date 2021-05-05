@@ -31,7 +31,7 @@ class ContactForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit} className={styles.Form}>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             type="name"
             name="name"
@@ -46,7 +46,7 @@ class ContactForm extends Component {
           <Form.Control
             type="tel"
             name="number"
-            placeholder="Number"
+            placeholder="Enter phone number"
             value={this.state.password}
             onChange={this.handleChange}
           />
