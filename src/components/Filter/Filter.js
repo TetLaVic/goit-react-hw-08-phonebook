@@ -20,7 +20,7 @@ class Filter extends Component {
           placeholder="Search"
           className="mr-sm-2"
         />
-        <Button variant="outline-light">Search</Button>
+        <Button variant="primary">Search</Button>
       </Form>
     );
   }
